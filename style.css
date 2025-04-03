@@ -1,5 +1,5 @@
 .card {
-    background-color: #e91f1f;
+    background-color: #3b9cf8;
     width: 300px;
     border-radius: 10px;
     padding: 10px;
@@ -9,6 +9,7 @@
     justify-content: center;
     height: 100px;
     position: relative;
+    animation: fadeIn 0.5s ease;
 }
 
 .ntext{
@@ -23,15 +24,16 @@
 .htext{
     display: none;
     position: absolute;
-    color: rgb(155, 0, 0);
+    color: rgb(0, 124, 155);
     font-weight: bold;
 }
 
 .card:hover {
     background-color: white;
-    border: 2px solid rgb(155, 0, 0);
+    border: 2px solid rgb(72, 144, 238);
     transition: all 0.5s ease;
     scale: 1.1;
+    animation: slideIn 0.5s ease;
 }
 
 .card:hover .ntext {
@@ -52,6 +54,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: rgb(238,174,202);
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }
 
 .container {
@@ -70,25 +74,39 @@ body {
     padding: 20px;
 } 
 
-@media (max-width: 768px) {
+/* Pour les tablettes */ 
+@media screen and (max-width: 768px) {
+    .promo-item {
+        grid-template-columns: repeat(2, 1fr);
+    }
     .card {
         width: 200px;
         height: 80px;
     }
 }
-@media (max-width: 480px) {
+/* Si le contenu est trop large pour la tablette, on le met en 1 colonne */
+@media screen and (max-width: 480px) {  
+    .promo-item {
+        grid-template-columns: 1fr;
+    }
     .card {
-        width: 150px;
+        width: 250px;
         height: 70px;
         padding: 8px;
     }
-} @media (max-width: 300px) {
+}
+@media screen and (max-width: 300px) {
+    .promo-item {
+        grid-template-columns: 1fr;
+    }
     .card {
-        width: 120px;
+        width: 200px;
         height: 60px;
         padding: 5px;
     }
-} h1 {
+}
+
+h1 {
     text-align: center;
     color: rgb(141, 172, 240);
     padding: 10px;
@@ -113,4 +131,4 @@ body {
     font-weight: bold;
     text-decoration: underline;
     color: white;
-}
+} 
