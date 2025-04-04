@@ -212,4 +212,8 @@ h1 {
       transition-property: opacity, filter;
       transition-duration: 0.15s;
       transition-timing-function: linear;
-  }
+  } .test {
+    position: absolute;
+    z-index: 3;
+    right: 20px;
+  } 
